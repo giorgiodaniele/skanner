@@ -17,12 +17,16 @@ func printResults(results []Result) {
 
 	w := tabwriter.NewWriter(os.Stdout, 0, 0, 3, ' ', 0)
 
-	fmt.Fprintln(w, "TARGET\tPORT\tSTATUS")
-	fmt.Fprintln(w, "------\t----\t------")
+	fmt.Fprintln(w, "TARGET\tPORT\tSERVICE\tSTATUS")
+	fmt.Fprintln(w, "------\t----\t-------\t------")
 
 	for _, r := range results {
-		fmt.Fprintf(w, "%s\t%d\t%s\n",
-			r.Target, r.Port, r.Status)
+		fmt.Fprintf(w, "%s\t%d\t%s\t%s\n",
+			r.Target,
+			r.Port,
+			serviceName(r.Port),
+			r.Status,
+		)
 	}
 
 	_ = w.Flush()

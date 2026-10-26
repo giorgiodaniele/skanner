@@ -1,23 +1,16 @@
+
 # skanner
 
-skanner is a simple TCP port scanner written in Go.
+![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-
+Skanner is a simple TCP port scanner written in Go.
 
 ## Usage
 
-To build, run `go build` in the project directory.
+Build with `go build`, then run `skanner -h` for usage information.
 
-To run, run `skanner -h` for usage information.
-
-Example:
-
-```
+```bash
 skanner -targets 127.0.0.1,192.168.1.1 -ports 22,80,443,1-1024 -timeout 500ms -workers 100
 ```
-
-## Output
-
-The program will output a list of open ports to the console (by default).
-
-![TCP Scanner output](images/image.png)
